@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <meta name="keywords" content="keywords"/>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" name="viewport">
+    <!-- 是否启用 WebApp 全屏模式 -->
+    <meta name="apple-mobile-web-app-capable" content="yes"  >
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" >
+    <!-- 添加到主屏后的标题（iOS 6 新增） -->
+    <meta name="apple-mobile-web-app-title" content="商城">
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <meta name="format-detection" content="telephone=no, email=no" >
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <!-- UC强制全屏 -->
+    <meta name="full-screen" content="yes">
+    <!-- QQ强制全屏 -->
+    <meta name="x5-fullscreen" content="true">
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <style type="text/css">
+        .loader{
+            left:50%;
+            top:50%;
+            height: 32px;
+            line-height: 32px;
+            position:fixed;
+            -webkit-transform:translate(-50%,-50%);
+            transform:translate(-50%,-50%)
+        }
+        .loader #spinner{
+            stroke:#673AB7;
+          stroke-width:3px;
+          -webkit-transform-origin:50%;
+          transform-origin:50%;
+          -webkit-animation:line 1.6s cubic-bezier(.4,0,.2,1) infinite,rotate 1.6s linear infinite;
+          animation:line 1.6s cubic-bezier(.4,0,.2,1) infinite,rotate 1.6s linear infinite
+        }
+        @-webkit-keyframes rotate{
+            from{
+                -webkit-transform:rotate(0);
+                transform:rotate(0)
+            }
+            to{ 
+                -webkit-transform:rotate(450deg);
+                transform:rotate(450deg)
+            }
+        }
+        @keyframes rotate{
+            from{
+                -webkit-transform:rotate(0);
+                transform:rotate(0)
+            }
+            to{
+                -webkit-transform:rotate(450deg);
+                transform:rotate(450deg)
+                }
+            }
+        }
+        @-webkit-keyframes line{
+            0%{stroke-dasharray:2,85.964;-webkit-transform:rotate(0);transform:rotate(0)}50%{stroke-dasharray:65.973,21.9911;stroke-dashoffset:0}100%{stroke-dasharray:2,85.964;stroke-dashoffset:-65.973;-webkit-transform:rotate(90deg);transform:rotate(90deg)}}
+
+        @keyframes line{0%{stroke-dasharray:2,85.964;-webkit-transform:rotate(0);transform:rotate(0)}50%{stroke-dasharray:65.973,21.9911;stroke-dashoffset:0}100%{stroke-dasharray:2,85.964;stroke-dashoffset:-65.973;-webkit-transform:rotate(90deg);transform:rotate(90deg)}}
+    </style>
+</head>
+<body>
+<div id="app"></div>
+
+<div id="loading" class="loader">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+    Loading ……
+</div>
+<article id="toast"></article>
+<script type="text/javascript" src="dist/build.js?v=1.0"></script>
+<script type="text/javascript">
+    
+    window.onload = function (){
+        document.querySelector('#loading').style.cssText = 'display: none;'
+    }
+</script>
+</body>
+</html> 

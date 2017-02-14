@@ -1,0 +1,18 @@
+@import 'base';
+@import 'grid';
+
+
+.element{
+	background: url(/dist/assets/img/elements.png) no-repeat;
+}
+.black-circle{
+	@extend .element;
+	width: 26px;
+	height: 26px;
+	line-height: 24px;
+	display: inline-block;
+	background-position: -30px -121px;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+}
