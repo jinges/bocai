@@ -55,7 +55,7 @@
 	@import './../assets/sass/style.scss';
 
 	.bar{
-		background-image: url(./../assets/img/touzhu.png)
+		background: url(./../assets/img/touzhu.png) 0 0 no-repeat;
 		.count{
 			input{
 				width: 50px;
