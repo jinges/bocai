@@ -1,12 +1,13 @@
 <template>
-	<article class="circle">
-		<ul class="number-circle">
+	<article class="game-content">
+		<span class="tips">{{labText}}</span>
+		<ul class="number-circle fl">
 			<li v-for="(index, num) in nums">
 				<input type="checkbox" :id="types+num" :value="num"  class="circle element" v-model="selectednumbers">
 				<label :for="types+num">{{num}}</label>
 			</li>
 		</ul>
-		<ul class="mutilSelect">
+		<ul class="mutilSelect fl">
 			<li v-for="(item, index) in selectType">
 				<span class="black-circle" @click="mutilSel(index)">{{item}}</span>
 			</li>
@@ -17,7 +18,8 @@
 
 	export default{
 		props:{
-			types: String
+			types: String,
+			labText: String
 		},
 		data(){
 			return {
@@ -59,9 +61,25 @@
 	}
 </script>
 <style lang="sass">
-	.circle{
+	@import './../assets/sass/style.scss';
+
+	.game-content{
 		display: block;
 		clear: both;
+		padding-left: 50px;
+		.tips{
+			@extend .element;
+			width: 60px;
+		    height: 24px;
+		    line-height: 24px;
+		    display: block;
+		    color: #fff;
+		    font-size: 12px;
+		    text-align: center;
+		    background-position: -306px -11px;
+		    position: absolute;
+    		margin: 13px 0 0 -60px;
+		}
 		li{
 			cursor: pointer;
 			text-align: center;
@@ -71,7 +89,8 @@
 	.number-circle{
 		li{
 			float: left;
-			padding: 5px;
+			padding: 5px 9px;
+			position: relative;
 			.circle{
 				width: 40px;
 				height: 40px;
@@ -79,7 +98,9 @@
 				background-position: -30px 0px;
 				&+ label{
 					position: absolute;
-					margin-top: -40px;
+					left: 9px;
+					top: 5px;
+					cursor: pointer;
 					@extend .circle
 				}
 				&:checked{
