@@ -59,7 +59,6 @@
 	@import './../assets/sass/style.scss';
 
 	.bar
-<<<<<<< HEAD
 		width: 790px;
 		height: 30px;
 		line-height: 30px;
