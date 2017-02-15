@@ -1,6 +1,6 @@
 <template>
 	<article class="nav_header">
-		<div v-for="navItem in navData">
+		<div v-for="navItem in navData.nav">
 			<span class="tips fl clear">{{navItem.title}}</span>
 			<ul>
 				<li 
@@ -9,12 +9,13 @@
 					v-for="item in navItem.list">{{item.title}}</li>
 			</ul>
 		</div>
+		<p class="clear prompt">{{navData.tips.title}}</p>
 	</article>
 </template>
 <script>
 	export default{
 		props:{
-			navData: Array
+			navData: Object
 		},
 		data(){
 			return {
