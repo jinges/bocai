@@ -1,6 +1,7 @@
 @import 'base';
 @import 'grid';
-
+@import 'right_slider';
+@import 'nav_header';
 
 .element{
 	background: url(/dist/assets/img/elements.png) no-repeat;
@@ -15,4 +16,12 @@
 	font-size: 12px;
 	text-align: center;
 	color: #fff;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-spacing: 0;
+  border-collapse: collapse;
 }

@@ -5,6 +5,6 @@ export default [
 		path: '/',  
 		name: 'index',
 		title: '首页',
-		component: require('./views/shishicai/wuxing/zhixuanfushi.vue')
+		component: require('./views/index.vue')
 	}
 ]

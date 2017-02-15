@@ -1,0 +1,19 @@
+.nav_header{
+	.tips{
+		font-size: 13px;
+	}
+	li{
+		float: left;
+		font-size: 13px;
+		text-align: center;
+		width: 74px;
+		height: 28px;
+		line-height: 26px;
+		display: block;
+		cursor: pointer;
+		&.active{
+			@extend .element;
+			background-position: -144px -0px !important;
+		}
+	}
+}
