@@ -1,11 +1,10 @@
 <template>
 	<section>
-		<temp @selecters="selectWan" types="w"></temp>
-		<temp @selecters="selectQian"types="q"></temp>
-		<temp @selecters="selectBai"types="b"></temp>
-		<temp @selecters="selectShi"types="s"></temp>
-		<temp @selecters="selectGe"types="g"></temp>
-		<span @click="sub">点击</span>
+		<temp @selecters="selectWan" lab-text="万位" types="w"></temp>
+		<temp @selecters="selectQian" lab-text="千位" types="q"></temp>
+		<temp @selecters="selectBai" lab-text="百位" types="b"></temp>
+		<temp @selecters="selectShi" lab-text="十位" types="s"></temp>
+		<temp @selecters="selectGe" lab-text="个位" types="g"></temp>
 		<selected-view :selected-data="selectedData"></selected-view>
 	</section>
 </template>
@@ -46,9 +45,6 @@
 			},
 			selectGe(val){
 				this.selectedNum[4] = val.join('');
-			},
-			sub(){
-				console.log(this.selectedNum.join(''));
 			}
 		}
 	}

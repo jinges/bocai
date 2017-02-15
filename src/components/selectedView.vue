@@ -1,7 +1,7 @@
 <template>
 	<article>
 		<section class="bar clear">
-			<div>
+			<div class="left">
 				<span class="fl">共0注</span>
 				<div class="count fl">
 					<i class="element">-</i>
@@ -15,16 +15,20 @@
 					<i class="black-circle">厘</i>
 					<span>金额：0元</span>
 				</div>
-				<div class="btns">
-					<span v-for="(item, index) in ['添加', '加倍', '机选']"
-						:class="{'active': active == index}"
-						@click="activeFun(index)"
-						 >{{item}}</span>
-				</div>
+			</div>
+			<div class="btns">
+				<span v-for="(item, index) in ['添加', '加倍', '机选']"
+					:class="{'active': active == index}"
+					@click="activeFun(index)"
+					 >{{item}}</span>
 			</div>
 		</section>
 		<table class="viewNum">
 			<tr  v-for="item in selectedData">
+				<td>{{item.title}}</td>
+				<td>{{item.title}}</td>
+				<td>{{item.title}}</td>
+				<td>{{item.title}}</td>
 				<td>{{item.title}}</td>
 			</tr>
 		</table>
@@ -54,13 +58,26 @@
 <style lang="sass">
 	@import './../assets/sass/style.scss';
 
-	.bar{
+	.bar
+<<<<<<< HEAD
+		width: 790px;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 4px 0 4px;
 		background: url(./../assets/img/touzhu.png) 0 0 no-repeat;
+		.left{
+			padding: 0 20px;
+			color: #fff;
+			font-size: 12px;
+		}
 		.count{
+			height: 24px;
+			padding: 3px 10px 3px 30px;
 			input{
 				width: 50px;
 				height: 24px;
 				display:inline-block;
+				vertical-align: text-bottom;
 				@extend .element;
 			    background-position: -145px -89px;
 			}
@@ -68,14 +85,21 @@
 			    width: 24px;
 			    height: 24px;
 			    display: inline-block;
+			    cursor: pointer;
 				@extend .element;
-			    background-position: -129px -121px;
+			    background-position: -145px -114px;
+			}
+		}
+		.money{
+			i{
+			    cursor: pointer;
 			}
 		}
 		.btns{
 			float: right;
 			width: 192px;
 			height: 28px;
+			margin: 1px 0;
 			display: inline-block;
 			@extend .element;
 			background-position: -145px -166px;
