@@ -1,5 +1,6 @@
 <template>
 	<div class="index">
+		<header-panner></header-panner>
 		<nav-tab></nav-tab>
 		<nav-header :nav-data="navHeaderData"></nav-header>
 		<tab-list></tab-list>
@@ -9,12 +10,14 @@
 	import navHeader from './../components/nav_header.vue'
 	import navTab from './../components/nav_tab.vue'
 	import tabList from './../components/tab_list.vue'
+	import headerPanner from './../components/header.vue'
 
 	export default{
 		components:{
 			navHeader,
 			navTab,
-			tabList
+			tabList,
+			headerPanner
 		},
 		data(){
 			return {

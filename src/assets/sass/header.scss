@@ -1,0 +1,45 @@
+.header{
+	height: 86px;
+	background: url(./../img/top.jpg);
+	color: white;
+	font-size: 14px;
+	ul{
+		height: 50px;
+		width: 1200px;
+	    min-width: 1200px;
+		margin: 0 auto;
+		padding: 35px 0 0 0;
+		li{
+			min-width: 60px;
+			height: 50px;
+			line-height: 50px;	
+			cursor: pointer;
+		    padding: 0 8px;
+		    position: relative;
+			float: left;
+			text-align: center;
+			border-right: 1px solid #08070C;
+			border-left: 1px solid #6A1918;
+			.portrait{
+				margin: 10px 5px 0 5px;
+			    height: 36px;
+			    width: 36px;
+			    background: url(./../img/portrait.png) no-repeat;
+			    display: inline-block;
+			    float: left;
+			}
+			&.money{
+				color: #F27C32;
+			}
+			.pay-icon{
+				background-position: -0px -105px;
+				position: absolute;
+			    top: 8px;
+			    width: 35px;
+			    height: 35px;
+			    display: inline-block;
+			    background: url(./../img/header_icon.png); 
+			}
+		}
+	}
+}
