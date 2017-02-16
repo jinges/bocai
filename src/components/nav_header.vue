@@ -9,7 +9,7 @@
 					v-for="item in navItem.list">{{item.title}}</li>
 			</ul>
 		</div>
-		<p class="clear prompt">{{navData.tips.title}}</p>
+		<p class="clear prompt">{{navData.tips.title}} <span class="example">范例</span> <span class="help">？</span></p>
 	</article>
 </template>
 <script>

@@ -1,14 +1,20 @@
 <template>
 	<div class="index">
+		<nav-tab></nav-tab>
 		<nav-header :nav-data="navHeaderData"></nav-header>
+		<tab-list></tab-list>
 	</div>
 </template>
 <script type="text/javascript">
 	import navHeader from './../components/nav_header.vue'
+	import navTab from './../components/nav_tab.vue'
+	import tabList from './../components/tab_list.vue'
 
 	export default{
 		components:{
-			navHeader
+			navHeader,
+			navTab,
+			tabList
 		},
 		data(){
 			return {
@@ -42,7 +48,7 @@
 						}
 					],
 					tips: {
-						title: '从万位、千位、百位、十位、个位各选一个号码组成一注 ',
+						title: '从万位、千位、百位、十位、个位各选一个号码组成一注。',
 						bubble: '1'
 					}
 				}

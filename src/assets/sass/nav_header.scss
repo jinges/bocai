@@ -6,6 +6,7 @@
 		line-height: 28px;
 		width: 60px;
 		text-align: center;
+		color: #9c9c9c;
 	}
 	li{
 		float: left;
@@ -22,13 +23,26 @@
 			@extend .element;
 			background-position: -144px -0px !important;
 		}
-		&.hover{
-			color: #f3af45;
+		&:hover{
+			color: rgb(219, 92, 67);
 		}
 	}
 	.prompt{
 		height: 32px;
 		line-height: 32px;
 		padding: 0 0 0 5px;
+		color:#9c9c9c;
+		.example{			
+			@extend .element;
+			background-position:-145px -89px !important;
+			color: white;
+			padding:4px 13px; 
+		}
+		.help{
+			@extend .element;
+			background-position: -140px -114px !important;
+			color: white;
+			padding: 4px 10px;
+		}
 	}
 }
