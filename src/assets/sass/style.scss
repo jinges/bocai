@@ -3,8 +3,11 @@
 @import 'right_slider';
 @import 'nav_header';
 @import 'nav_tab';
+@import 'circle';
+@import 'selectView';
+
 .element{
-	background: url(/dist/assets/img/elements.png) no-repeat;
+	background: url(./../img/elements.png) no-repeat;
 }
 .black-circle{
 	@extend .element;

@@ -6,5 +6,11 @@ export default [
 		name: 'index',
 		title: '首页',
 		component: require('./views/index.vue')
+	},
+	{
+		path: '/ssc',  
+		name: 'index',
+		title: '首页',
+		component: require('./views/shishicai/wuxing/zhixuanfushi.vue')
 	}
 ]
