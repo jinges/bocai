@@ -15,7 +15,8 @@
    			text-align: center;
 			float: left;
 			cursor: pointer;
-			&:hover{
+			&:hover,
+			&.active{
 				color: rgb(254, 208, 133);
 				border-bottom: 2px solid rgb(254, 208, 133);
 			}

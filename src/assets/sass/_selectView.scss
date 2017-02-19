@@ -18,7 +18,7 @@
 				display:inline-block;
 				vertical-align: text-bottom;
 				@extend .element;
-			    background-position: -145px -89px;
+			    background-position: -145px -89px !important;
 			}
 			i{
 			    width: 24px;
@@ -26,7 +26,7 @@
 			    display: inline-block;
 			    cursor: pointer;
 				@extend .element;
-			    background-position: -145px -114px;
+			    background-position: -145px -114px !important;
 			}
 		}
 		.money{
@@ -41,7 +41,7 @@
 			margin: 1px 0;
 			display: inline-block;
 			@extend .element;
-			background-position: -145px -166px;
+			background-position: -145px -166px !important;
 			span{
 				float: left;
 				width: 57px;
@@ -56,7 +56,7 @@
 					width: 74px;
 					color: #FED083;
 					@extend .element;
-					background-position: -145px -138px;
+					background-position: -145px -138px !important;
 				}
 			}
 		}

@@ -1,64 +1,24 @@
 <template>
 	<article class="nav_tab">
 		<ul class="tabtitle">
-			<li v-for="navItem in navData">{{navItem.name}}</li>
+			<li @click="selectType(index)" :class="{'active': index == selected}" v-for="(navItem, index) in tabData">{{navItem.title}}</li>
 		</ul>
 	</article>
 </template>
 <script>
 export default{
+	props: {
+		tabData: Array
+	},
 	data(){
-		return{
-			navData:[
-				{
-					name: '五星',
-					id: '1'
-				},
-				{
-					name: '四星',
-					id: '2'
-				},
-				{
-					name: '前三',
-					id: '3'
-				},
-				{
-					name: '中三',
-					id: '4'
-				},
-				{
-					name: '后三',
-					id: '5'
-				},
-				{
-					name: '前二',
-					id: '6'
-				},
-				{
-					name: '后二',
-					id: '7'
-				},
-				{
-					name: '定位胆',
-					id: '8'
-				},
-				{
-					name: '不定位',
-					id: '9'
-				},
-				{
-					name: '大小单双',
-					id: '10'
-				},
-				{
-					name: '龙虎斗',
-					id: '11'
-				},
-				{
-					name: '任选玩法',
-					id: '12'
-				},
-			]
+		return {
+			selected: 1
+		}
+	},
+	methods:{
+		selectType(index){
+			this.selected = index;
+			this.$emit('gametype', index);
 		}
 	}
 }

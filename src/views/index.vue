@@ -1,5 +1,7 @@
 <template>
 	<div class="index">
+		<header-panner></header-panner>
+			<gm-con></gm-con>
 		<nav-tab></nav-tab>
 		<nav-header :nav-data="navHeaderData"></nav-header>
 		<tab-list></tab-list>
@@ -9,12 +11,15 @@
 	import navHeader from './../components/nav_header.vue'
 	import navTab from './../components/nav_tab.vue'
 	import tabList from './../components/tab_list.vue'
-
+	import headerPanner from './../components/header.vue'
+	import gmCon from './../components/game_result.vue'
 	export default{
 		components:{
 			navHeader,
 			navTab,
-			tabList
+			tabList,
+			headerPanner,
+			gmCon
 		},
 		data(){
 			return {
