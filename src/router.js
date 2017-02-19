@@ -6,5 +6,11 @@ export default [
 		name: 'index',
 		title: '首页',
 		component: require('./views/index.vue')
+	},
+	{
+		path: '/temp1/:id',  
+		name: 'index',
+		title: '时时彩',
+		component: require('./views/template1.vue')
 	}
 ]

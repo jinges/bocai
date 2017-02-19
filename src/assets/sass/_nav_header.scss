@@ -1,0 +1,34 @@
+.nav_header{
+		font-size: 12px;
+		margin: 6px 0 0 5px;
+	.tips{
+		height: 28px;
+		line-height: 28px;
+		width: 60px;
+		text-align: center;
+	}
+	li{
+		float: left;
+		text-align: center;
+		width: 74px;
+		height: 28px;
+		line-height: 28px;
+		display: block;
+		cursor: pointer;
+		margin: 0 4px;
+		color: black;
+		&.active{
+			color: #f3af45;
+			@extend .element;
+			background-position: -144px -0px !important;
+		}
+		&.hover{
+			color: #f3af45;
+		}
+	}
+	.prompt{
+		height: 32px;
+		line-height: 32px;
+		padding: 0 0 0 5px;
+	}
+}

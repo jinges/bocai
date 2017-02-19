@@ -2,14 +2,7 @@
 @import 'grid';
 @import 'right_slider';
 @import 'nav_header';
-@import 'nav_tab';
-@import 'header';
-@import 'gm_con';
-@import 'left_panner';
-@import 'dice';
-.element{
-	background: url(/dist/assets/img/elements.png) no-repeat;
-}
+
 .black-circle{
 	@extend .element;
 	width: 26px;
@@ -28,4 +21,16 @@
   margin-bottom: 20px;
   border-spacing: 0;
   border-collapse: collapse;
+}
+
+.content{
+	width: 1100px;
+	min-width: 1100px;
+	margin:auto;
+	.left_pannel{
+		width: 805px;
+	}
+	.right_pannel{
+		width: 295px;
+	}
 }

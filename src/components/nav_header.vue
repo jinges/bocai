@@ -1,15 +1,15 @@
 <template>
 	<article class="nav_header">
-		<div v-for="navItem in navData.nav">
+		<div v-for="navItem in navData">
 			<span class="tips fl clear">{{navItem.title}}</span>
 			<ul>
 				<li 
 					:class="{'active': item.id == seletedId}" 
 					@click="select(item.id)"
-					v-for="item in navItem.list">{{item.title}}</li>
+					v-for="item in navItem.childs">{{item.title}}</li>
 			</ul>
 		</div>
-		<p class="clear prompt">{{navData.tips.title}} <span class="example">范例</span> <span class="help">？</span></p>
+		<p class="clear prompt">描述 <span class="example">范例</span> <span class="help">？</span></p>
 		<div class="text-box">
 			<div class="single">
 				<textarea class="input_nums" style="overflow-y: hidden; outline: none;"></textarea>
@@ -26,7 +26,7 @@
 <script>
 	export default{
 		props:{
-			navData: Object
+			navData: Array
 		},
 		data(){
 			return {
