@@ -1,26 +1,15 @@
 <template>
 	<article class="nav_header">
-		<div v-for="navItem in navData">
+		<div v-for="(navItem, oi) in navData">
 			<span class="tips fl clear">{{navItem.title}}</span>
 			<ul>
 				<li 
-					:class="{'active': item.id == seletedId}" 
-					@click="select(item.id)"
-					v-for="item in navItem.childs">{{item.title}}</li>
+					:class="{'active': ti == seletedId}" 
+					@click="select(oi, ti)"
+					v-for="(item, ti) in navItem.childs">{{item.title}}</li>
 			</ul>
 		</div>
-		<p class="clear prompt">描述 <span class="example">范例</span> <span class="help">？</span></p>
-		<div class="text-box">
-			<div class="single">
-				<textarea class="input_nums" style="overflow-y: hidden; outline: none;"></textarea>
-				 <span class="clear-repeat">删除重复</span>
-		        <span class="empty">清空</span>
-				<span class="write_box_desc">
-		            每一个号码之间请用一个 空格[ ]、逗号[,] 或者 分号[;] 隔开
-		        </span>
-		       
-			</div>
-		</div>
+		<p class="clear prompt">{{disc}}<span class="example">范例</span> <span class="help">？</span></p>
 	</article>
 </template>
 <script>
@@ -30,12 +19,15 @@
 		},
 		data(){
 			return {
-				seletedId: -1
+				seletedId: -1,
+				disc: ''
 			}
 		},
 		methods:{
-			select(index){
-				this.seletedId = index;
+			select(oi, ti){
+				this.seletedId = ti;
+				this.disc = this.navData[oi].childs[ti].dist;
+				this.$emit('selctedtemp', [oi, ti]);
 			}
 		}
 	}

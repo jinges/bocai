@@ -3,7 +3,8 @@
 		<game-result></game-result>
 		<div class="left_pannel fl">
 			<nav-tab :tab-data="gameData" @gametype="checkGame"></nav-tab>
-			<nav-header :nav-data="gameType"></nav-header>
+			<nav-header :nav-data="gameType" @selctedtemp="selectTemp"></nav-header>
+			<five-line></five-line>
 			<selected-view></selected-view>
 		</div>
 	</article>
@@ -12,7 +13,10 @@
 	import GameResult from './../components/game_result.vue';
 	import NavTab from './../components/nav_tab.vue';
 	import NavHeader from './../components/nav_header.vue';
+	import FiveLine from './../components/games/fiveline.vue'
 	import SelectedView from './../components/SelectedView.vue';
+
+
 	import shishicai from './../GameData/shishicai'
 
 	export default{
@@ -20,7 +24,8 @@
 			GameResult,
 			NavTab,
 			NavHeader,
-			SelectedView
+			SelectedView,
+			FiveLine
 		},
 		data(){
 			return {
@@ -45,6 +50,9 @@
 			},
 			checkGame(index){
 				this.gameType = this.gameData[index].childs;
+			},
+			selectTemp(arr){
+				console.log(arr);
 			}
 		}
 	}

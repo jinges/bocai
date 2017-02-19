@@ -15,6 +15,9 @@
 	import tabList from './../components/tab_list.vue'
 	import headerPanner from './../components/header.vue'
 	import gmCon from './../components/game_result.vue'
+	import leftPanner from './../components/left_pannel.vue'
+	import dice from './../components/dice.vue'
+	
 	export default{
 		components:{
 			navHeader,
