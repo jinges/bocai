@@ -1,8 +1,10 @@
 <template>
 	<div class="index">
 		<header-panner></header-panner>
-			<gm-con></gm-con>
+		<gm-con></gm-con>
 		<nav-tab></nav-tab>
+		<left-panner></left-panner>
+		<dice></dice>
 		<nav-header :nav-data="navHeaderData"></nav-header>
 		<tab-list></tab-list>
 	</div>
@@ -13,13 +15,17 @@
 	import tabList from './../components/tab_list.vue'
 	import headerPanner from './../components/header.vue'
 	import gmCon from './../components/gm_con.vue'
+	import leftPanner from './../components/left_panner.vue'
+	import dice from './../components/dice.vue'
 	export default{
 		components:{
 			navHeader,
 			navTab,
 			tabList,
 			headerPanner,
-			gmCon
+			gmCon,
+			leftPanner,
+			dice
 		},
 		data(){
 			return {
