@@ -27,6 +27,13 @@
 				}]
 			}
 		},
+		watch: {
+			selectWan: function(arr){
+				if(arr.length == 5) {
+					this.$emit('selectedResult', arr);
+				}
+			}
+		},
 		methods:{
 			selectWan(val){
 				this.selectedNum[0] = val.join('');

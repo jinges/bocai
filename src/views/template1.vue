@@ -4,7 +4,34 @@
 		<div class="left_pannel fl">
 			<nav-tab :tab-data="gameData" @gametype="checkGame"></nav-tab>
 			<nav-header :nav-data="gameType" @selctedtemp="selectTemp"></nav-header>
-			<five-line></five-line>
+			<five-line @selected-result="getResult"></five-line>
+			<section class="bar clear">
+				<div class="left">
+					<span class="fl">共0注</span>
+					<div class="count fl">
+						<i class="element" @click="minus">-</i>
+						<input type="text"  class="element" v-model="count">
+						<i class="element" @clcik="plus">+</i>
+					</div>
+					<div class="money fl">
+						<i class="black-circle" @click="unit*=1">元</i>
+						<i class="black-circle" @click="unit*=0.1">角</i>
+						<i class="black-circle" @click="unit*=0.01">分</i>
+						<i class="black-circle" @click="unit*=0.001">厘</i>
+						<i class="black-circle" 
+							v-for="(item, index) in currency"
+							:class="{'active': selectCurrency == index}"
+							@click="unit*=item[1]">{{item[0]}}</i>
+						<span>金额：{{count * unit}}元</span>
+					</div>
+				</div>
+				<div class="btns">
+					<span v-for="(item, index) in ['添加', '加倍', '机选']"
+						:class="{'active': active == index}"
+						@click="activeFun(index)"
+						 >{{item}}</span>
+				</div>
+			</section>
 			<selected-view></selected-view>
 		</div>
 	</article>
@@ -31,7 +58,14 @@
 			return {
 				gameType: Array,
 				gameData: Object,
-				gameIndex: Number
+				gameIndex: Number,
+				active: 0,
+				flag: -1,
+				count: 1,
+				result: Array,
+				unit: 1,
+				currency: [['元', 1], ['角', 0.1], ['分', 0.01], ['厘',0.001]],
+				selectCurrency: 0
 			}
 		},
 		created(){
@@ -53,6 +87,25 @@
 			},
 			selectTemp(arr){
 				console.log(arr);
+			},
+			activeFun(index){
+				let that = this;
+				this.active = index;
+				setTimeout(()=>{
+					that.active = 0;
+				}, 200);
+			},
+			getResult(arr){
+				this.result = arr;
+			},
+			plus(){
+				this.count++;
+			},
+			minus(){
+				this.count=this.count>1?this.count--:1;
+			},
+			double(){
+				this.count*=2;
 			}
 		}
 	}
