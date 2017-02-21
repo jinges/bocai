@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue.js'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
+import Vuex from 'vue'
 
 
 import routes from './router'
@@ -15,6 +16,7 @@ import App from './App.vue'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
+Vue.use(Vuex)
 
 Object.keys(Directive).forEach(function(k){
 	Vue.directive(k, Directive[k]);

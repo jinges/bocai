@@ -14,14 +14,10 @@
 						<i class="element" @clcik="plus">+</i>
 					</div>
 					<div class="money fl">
-						<i class="black-circle" @click="unit*=1">元</i>
-						<i class="black-circle" @click="unit*=0.1">角</i>
-						<i class="black-circle" @click="unit*=0.01">分</i>
-						<i class="black-circle" @click="unit*=0.001">厘</i>
 						<i class="black-circle" 
 							v-for="(item, index) in currency"
 							:class="{'active': selectCurrency == index}"
-							@click="unit*=item[1]">{{item[0]}}</i>
+							@click="unit=item[1]">{{item[0]}}</i>
 						<span>金额：{{count * unit}}元</span>
 					</div>
 				</div>
@@ -94,15 +90,22 @@
 				setTimeout(()=>{
 					that.active = 0;
 				}, 200);
+				if(index==0) {
+
+				} else if(index == 1) {
+					this.double();
+				} else if(index ==2) {
+					
+				}
 			},
 			getResult(arr){
 				this.result = arr;
 			},
 			plus(){
-				this.count++;
+				this.count+=1;
 			},
 			minus(){
-				this.count=this.count>1?this.count--:1;
+				this.count=this.count>1?--this.count:1;
 			},
 			double(){
 				this.count*=2;

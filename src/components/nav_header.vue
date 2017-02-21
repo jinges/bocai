@@ -15,7 +15,7 @@
 <script>
 	export default{
 		props:{
-			navData: Array
+			navData: Object
 		},
 		data(){
 			return {
