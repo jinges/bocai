@@ -11,13 +11,13 @@
 					<div class="count fl">
 						<i class="element" @click="minus">-</i>
 						<input type="text"  class="element" v-model="count">
-						<i class="element" @clcik="plus">+</i>
+						<i class="element" @click="plus">+</i>
 					</div>
 					<div class="money fl">
 						<i class="black-circle" 
 							v-for="(item, index) in currency"
 							:class="{'active': selectCurrency == index}"
-							@click="unit=item[1]">{{item[0]}}</i>
+							@click="unit=item[1];selectCurrency=index;">{{item[0]}}</i>
 						<span>金额：{{count * unit}}元</span>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 				this.result = arr;
 			},
 			plus(){
-				this.count+=1;
+				this.count=this.count*1 + 1;
 			},
 			minus(){
 				this.count=this.count>1?--this.count:1;
