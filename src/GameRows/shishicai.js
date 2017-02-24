@@ -1,4 +1,4 @@
-export function zhixuanfushi(arr){
+export function g1(arr){
 	let result = 1;
 	for(var i=0,len=arr.length;i<len;i++) {
 		result*=arr[i].length;
@@ -6,7 +6,7 @@ export function zhixuanfushi(arr){
 	return result;
 }
 
-export function zhixuanzuhe(arr){
+export function g2(arr){
 	return zhixuanfushi(arr) * 5;
 }
 

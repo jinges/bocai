@@ -5,6 +5,7 @@
 			<nav-tab :tab-data="gameData" @gametype="checkGame"></nav-tab>
 			<nav-header :nav-data="gameType" @selctedtemp="selectTemp"></nav-header>
 			<five-line @selected-result="getResult"></five-line>
+			<component :is="currentView" keep-alive></component>
 			<section class="bar clear">
 				<div class="left">
 					<span class="fl">共0注</span>
@@ -36,11 +37,14 @@
 	import GameResult from './../components/game_result.vue';
 	import NavTab from './../components/nav_tab.vue';
 	import NavHeader from './../components/nav_header.vue';
+	import OneLine from './../components/games/oneline.vue'
+	import TwoLine from './../components/games/twoline.vue'
+	import ThreeLine from './../components/games/threeline.vue'
+	import FourLine from './../components/games/fourline.vue'
 	import FiveLine from './../components/games/fiveline.vue'
 	import SelectedView from './../components/SelectedView.vue';
 
 
-	import shishicai from './../GameData/shishicai'
 
 	export default{
 		components:{
@@ -48,6 +52,10 @@
 			NavTab,
 			NavHeader,
 			SelectedView,
+			OneLine,
+			TwoLine,
+			ThreeLine,
+			FourLine,
 			FiveLine
 		},
 		data(){
@@ -61,7 +69,8 @@
 				result: Array,
 				unit: 1,
 				currency: [['元', 1], ['角', 0.1], ['分', 0.01], ['厘',0.001]],
-				selectCurrency: 0
+				selectCurrency: 0,
+				currentView: ''
 			}
 		},
 		created(){
