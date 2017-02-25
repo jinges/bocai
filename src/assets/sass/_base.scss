@@ -87,3 +87,7 @@ a{
 .element{
     background: url(./../img/elements.png) no-repeat;
 }
+*{
+    outline: none;
+    user-select:none;
+}
