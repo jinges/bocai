@@ -14,7 +14,12 @@
 	left: 0;
 	top:0;
 	padding-top: 232px;
-	overflow: hidden;
+	@include duration(.8s);
+	ul{
+		height: 100%;
+		display: block;
+		overflow: hidden;
+	}
 	.left_btn{
 		background:url(./../img/btn_bg.png) no-repeat;
 	}
@@ -40,6 +45,7 @@
 			top:1px;
 			background:url(./../img/zlogo.png) no-repeat;
 			background-position: 1000px 1000px; 
+			@include duration(.8s);
 			@for $i from 1 through 13{
 				&.a#{$i}{
 					background-position:0 ($i - 1) * -36px;
@@ -49,9 +55,15 @@
 	}
 	.childs{
 		color: #fff;
-		display: none;
+		height: 0;
+		@include duration(.8s);
+			-webkit-transition-timing-function: ease-in;
+			transition-timing-function: ease-in;
 		&.open{
-			display: block;
+			-webkit-transition-timing-function: ease-in;
+			transition-timing-function: ease-in;
+			height: auto;
+			@include duration(.8s);
 		}
 		li{
 			height: 32px;
@@ -67,10 +79,10 @@
 	&.close{
 		margin-left: -103px;
 		.zlogo{
-			left: 107px;
+			left: 105px;
 		}
 		.childs{
-			display: none;
+			height: 0;
 		}
 	}
 }
@@ -78,14 +90,11 @@
 	width: 36px;
 	height: 70px;
 	position: absolute;
-	left: 150px;
-	top: 481px;
 	background:url(./../img/left_menu_show.png);
 	cursor: pointer;
+	bottom: 200px;
+    left: 150px;
 	&:hover{
 		background-position: 38px 0;
-	}
-	&.leftclose{
-		left:46px;
 	}
 }

@@ -1,18 +1,20 @@
 <template>
 	<article>
 		<a class="logo"><img src="/dist/assets/img/logo.png" alt="logo"></a>
-		<ul class="left_nav" :class="{'close':leftopen}">
-			<li v-for="(item, index) in data">
-				<div class="title" @click="toggle(index)">
-					<span class="zlogo" :class="'a'+index"></span>
-					{{item.title}}
-				</div>
-				<ul class="childs" :class="{'open':openId == index}">
-					<li v-for="nItem in item.childs">{{nItem.title}}</li>
-				</ul>
-			</li>
-		</ul>
-		<div class="left_menu_show" @click="lefttoggle()" :class="{'leftclose':leftopen}">
+		<div  class="left_nav"  :class="{'close':leftopen}">
+			<ul>
+				<li v-for="(item, index) in data">
+					<div class="title" @click="toggle(index)">
+						<span class="zlogo" :class="'a'+index"></span>
+						{{item.title}}
+					</div>
+					<ul class="childs" :class="{'open':openId == index}">
+						<li v-for="nItem in item.childs">{{nItem.title}}</li>
+					</ul>
+				</li>
+			</ul>
+			<div class="left_menu_show" @click="lefttoggle()" :class="{'leftclose':leftopen}">
+		</div>
 		</div>
 	</article>
 </template>
