@@ -13,7 +13,7 @@
 					</ul>
 				</li>
 			</ul>
-			<div class="left_menu_show" @click="lefttoggle()" :class="{'leftclose':leftopen}">
+			<div class="left_menu_show" @click="lefttoggle()">
 		</div>
 		</div>
 	</article>

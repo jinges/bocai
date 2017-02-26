@@ -30,15 +30,17 @@
 								 >{{item}}</span>
 						</div>
 					</section>
-					<table class="viewNum">
-						<tr  v-for="item in selectedData">
-							<td>{{item.title}}</td>
-							<td>{{item.title}}</td>
-							<td>{{item.title}}</td>
-							<td>{{item.title}}</td>
-							<td>{{item.title}}</td>
-						</tr>
-					</table>
+					<section class="viewNum">
+						<ul>
+							<li  v-for="item in selectedData">
+								<span>{{item.title}}</span>
+								<span>{{item.nums}}</span>
+								<span>{{item.count}}</span>
+								<span>{{item.times}}</span>
+								<span>{{item.money}}</span>
+							</li>
+						</ul>
+					</section>
 				</article>
 			</div>
 			<right-slider class="clean right_pannel fl"></right-slider>
@@ -81,13 +83,14 @@
 				flag: -1,
 				times: 1,
 				count: 0,
-				result: Array,
+				result: Object,
 				unit: 1,
 				currency: [['元', 1], ['角', 0.1], ['分', 0.01], ['厘',0.001]],
 				selectCurrency: 0,
 				currentView: '',
 				cleanSelecter: false,
-				obj: Object
+				obj: Object,
+				selectedData: []
 			}
 		},
 		created(){
@@ -142,6 +145,7 @@
 				this.currentView = view;
 				this.obj.labText = item.title;
 				this.obj.nums = 10;
+				this.result.title = item.title;
 				this.cleanData();
 			},
 			activeFun(index){
@@ -151,7 +155,12 @@
 					that.active = 0;
 				}, 200);
 				if(index==0) {
-
+					this.setData();
+					this.selectedData.push(this.result);
+					this.unit = 1;
+					this.times = 1;
+					this.count = 0;
+					this.setData();
 				} else if(index == 1) {
 					this.double();
 				} else if(index ==2) {
@@ -159,9 +168,8 @@
 				}
 			},
 			getResult(arr){
-				console.log(arr);
 				this.count = fushi(arr);
-				this.result = arr;
+				this.result.nums = arr;
 			},
 			plus(){
 				this.times=this.times*1 + 1;
@@ -171,6 +179,12 @@
 			},
 			double(){
 				this.times*=2;
+			},
+			setData(){
+				this.result.unit = this.unit;
+				this.result.count = this.count;
+				this.result.times = this.times;
+				this.result.money = this.unit * this.count * this.times;
 			}
 		}
 	}

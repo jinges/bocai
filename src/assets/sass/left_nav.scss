@@ -56,14 +56,11 @@
 	.childs{
 		color: #fff;
 		height: 0;
-		@include duration(.8s);
-			-webkit-transition-timing-function: ease-in;
-			transition-timing-function: ease-in;
+		display: block;
+		@include duration(6s);
 		&.open{
-			-webkit-transition-timing-function: ease-in;
-			transition-timing-function: ease-in;
 			height: auto;
-			@include duration(.8s);
+			@include duration(8s);
 		}
 		li{
 			height: 32px;
