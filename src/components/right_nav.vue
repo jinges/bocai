@@ -1,5 +1,5 @@
 <template>
-	<article class="left_panner">
+	<article class="right_nav">
 		<div class="btn_list">
 			<a class="touzhu active">投注记录</a>
 			<a class="zuihao">追号记录</a>

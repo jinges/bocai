@@ -2,9 +2,9 @@
 	<article class="game-content">
 		<span class="tips">{{labText}}</span>
 		<ul class="number-circle fl">
-			<li v-for="(index, num) in nums">
-				<input type="checkbox" :id="types+num" :value="num"  class="circle element" v-model="selectednumbers">
-				<label :for="types+num">{{num}}</label>
+			<li v-for="(num, index) in nums">
+				<input type="checkbox" :id="types+num" :value="index"  class="circle element" v-model="selectednumbers">
+				<label :for="types+num">{{index}}</label>
 			</li>
 		</ul>
 		<ul class="mutilSelect fl">
