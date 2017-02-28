@@ -1,5 +1,6 @@
 <template>
 	<article class="right_slider">
+		<right-nav></right-nav>
 		<div class="tab_list">
 			<div class="header"><span>彩种</span><span>期号</span><span>投注内容</span><span>盈亏</span></div>
 			<ul>
@@ -34,3 +35,11 @@
 		</div>
 	</article>
 </template>
+<script>
+	import rightNav from './../components/right_nav.vue';
+	export default {
+		components: {
+			rightNav
+		}
+	}
+</script>

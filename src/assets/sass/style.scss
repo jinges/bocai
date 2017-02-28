@@ -1,14 +1,16 @@
 @import 'base';
+@import 'mixin';
 @import 'grid';
 @import 'right_slider';
 @import 'nav_header';
 @import 'selectView';
 @import 'gm_con';
 @import 'header';
-@import 'left_pannel';
+@import 'right_nav';
 @import 'nav_tab';
 @import 'circle';
 @import 'dice';
+@import 'left_nav';
 
 .black-circle{
 	@extend .element;
@@ -30,14 +32,28 @@
   border-collapse: collapse;
 }
 
-.content{
+.game_content{
 	width: 1100px;
 	min-width: 1100px;
 	margin:auto;
+	padding-bottom: 20px;
+	.content{
+		border-left: 1px solid $lineColor;
+		border-right: 1px solid $lineColor;
+	}
 	.left_pannel{
 		width: 805px;
 	}
 	.right_pannel{
-		width: 295px;
+		width: 293px;
 	}
+	.bottom_pannel{
+		width: 1100px;
+		height: 20px;
+		display: block;
+		background: url(./../img/d.png) no-repeat;
+	}
+}
+.hide{
+	display: none;
 }

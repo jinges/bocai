@@ -1,21 +1,16 @@
 <template>
-	<section>
+	<section class="game">
 		<temp @selecters="selectWan" lab-text="万位" types="w"></temp>
 		<temp @selecters="selectQian" lab-text="千位" types="q"></temp>
 		<temp @selecters="selectBai" lab-text="百位" types="b"></temp>
-		<temp @selecters="selectShi" lab-text="十位" types="s"></temp>
-		<temp @selecters="selectGe" lab-text="个位" types="g"></temp>
-		<selected-view :selected-data="selectedData"></selected-view>
 	</section>
 </template>
 <script>
-	import temp from './../../../components/ball.vue'
-	import selectedView from './../../../components/selectedView.vue'
+	import temp from './../ball.vue'
 
 	export default{
 		components:{
-			temp,
-			selectedView
+			temp
 		},
 		data(){
 			return {

@@ -1,0 +1,6 @@
+@mixin duration($num: 0){
+	-ms-transition-duration: $num;
+	-moz-transition-duration: $num;
+	-webkit-transition-duration: $num;
+	transition-duration: $num;
+}

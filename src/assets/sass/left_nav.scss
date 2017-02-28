@@ -1,0 +1,113 @@
+.logo{
+	width: 150px;
+	height: 232px;
+	display: block;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	display: none;
+}
+.left_nav{
+	width: 150px;
+	height: 100%;
+	background:url(./../img/zuo.png);
+	position: absolute;
+	left: 0;
+	top:0;
+	padding-top: 232px;
+	@include duration(.8s);
+	.back{
+		position: absolute !important;
+		margin-top: 38px;
+		z-index: 100;
+		left: -150px;
+		@include duration(.8s);
+		&.show{
+			left: 0;
+		}
+	}
+	ul{
+		height: 100%;
+		display: block;
+		overflow: hidden;
+	}
+	.nav_hide{
+		left: -150px;
+		overflow: hidden;
+		@include duration(.8s);
+	}
+	.left_btn{
+		background:url(./../img/btn_bg.png) no-repeat;
+	}
+	.title{
+		width: 150px;
+		height: 38px;
+		line-height: 38px;
+		padding-left: 45px;
+		font-size: 15px;
+		color: #fff;
+		margin-bottom: 1px;
+		position: relative;
+		cursor: pointer;
+		@extend .left_btn;
+		&:hover{
+			background-position: 0 -39px;
+		}
+		.zlogo{
+			width: 36px;
+			height: 36px;
+			position: absolute;
+			left: 3px;
+			top:1px;
+			background:url(./../img/zlogo.png) no-repeat;
+			background-position: 1000px 1000px; 
+			@include duration(.8s);
+			@for $i from 1 through 13{
+				&.a#{$i}{
+					background-position:0 ($i - 1) * -36px;
+				}
+			}
+		}
+	}
+	.childs{
+		color: #fff;
+		height: 0;
+		display: block;
+		@include duration(6s);
+		&.open{
+			height: auto;
+			@include duration(8s);
+		}
+		li{
+			height: 32px;
+			line-height: 32px;
+			padding: 0 8px;
+			cursor: pointer;
+			&:hover{
+				@extend .left_btn;
+				background-position: 0 -78px;
+			}
+		}
+	}
+	&.close{
+		margin-left: -103px;
+		.zlogo{
+			left: 105px;
+		}
+		.childs{
+			height: 0;
+		}
+	}
+}
+.left_menu_show{
+	width: 36px;
+	height: 70px;
+	position: absolute;
+	background:url(./../img/left_menu_show.png);
+	cursor: pointer;
+	bottom: 200px;
+    left: 150px;
+	&:hover{
+		background-position: 38px 0;
+	}
+}

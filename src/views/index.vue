@@ -1,22 +1,25 @@
 <template>
 	<div class="index">
-		<header-panner></header-panner>
-		<gm-con></gm-con>
+		<!-- <header-panner></header-panner> -->
+		<left-nav></left-nav>
+		<!-- <gm-con></gm-con>
 		<nav-tab></nav-tab>
 		<left-panner></left-panner>
 		<dice></dice>
 		<nav-header :nav-data="navHeaderData"></nav-header>
-		<tab-list></tab-list>
+		<tab-list></tab-list> -->
+		
 	</div>
 </template>
 <script type="text/javascript">
 	import navHeader from './../components/nav_header.vue'
 	import navTab from './../components/nav_tab.vue'
-	import tabList from './../components/tab_list.vue'
+	import tabList from './../components/right_slider.vue'
 	import headerPanner from './../components/header.vue'
 	import gmCon from './../components/game_result.vue'
-	import leftPanner from './../components/left_pannel.vue'
+	import leftPanner from './../components/right_nav.vue'
 	import dice from './../components/dice.vue'
+	import leftNav from './../components/left_nav.vue'
 	
 	export default{
 		components:{
@@ -26,7 +29,8 @@
 			headerPanner,
 			gmCon,
 			leftPanner,
-			dice
+			dice,
+			leftNav
 		},
 		data(){
 			return {

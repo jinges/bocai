@@ -4,9 +4,10 @@
 			<span class="tips fl clear">{{navItem.title}}</span>
 			<ul>
 				<li 
-					:class="{'active': ti == seletedId}" 
-					@click="select(oi, ti)"
-					v-for="(item, ti) in navItem.childs">{{item.title}}</li>
+					v-for="(item, ti) in navItem.childs"
+					:class="{'active': ti == childId && oi == navId}" 
+					@click="select(item, ti, oi)"
+				>{{item.title}}</li>
 			</ul>
 		</div>
 		<p class="clear prompt">{{disc}}<span class="example">范例</span> <span class="help">？</span></p>
@@ -15,19 +16,21 @@
 <script>
 	export default{
 		props:{
-			navData: Object
+			navData: Array
 		},
 		data(){
 			return {
-				seletedId: -1,
+				navId: -1,
+				childId: -1,
 				disc: ''
 			}
 		},
 		methods:{
-			select(oi, ti){
-				this.seletedId = ti;
-				this.disc = this.navData[oi].childs[ti].dist;
-				this.$emit('selctedtemp', [oi, ti]);
+			select(item, ti, oi){
+				this.navId = oi;
+				this.childId = ti;
+				this.disc = item.dist;
+				this.$emit('selctedtemp', item);
 			}
 		}
 	}
